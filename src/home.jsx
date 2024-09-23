@@ -3,7 +3,9 @@ import { useState, useCallback } from "react";
 const Home = () => {
   const [data, setData] = useState("");
   const [word, setWord] = useState("");
-//   console.log(data)
+  const [span, setSpan] = useState(<span></span>);
+  const [ def, setDef] = useState([])
+  
   const handleSubmit = useCallback(async (e)=>{
     e.preventDefault();
     //fetch data
@@ -32,7 +34,6 @@ const Home = () => {
             value={word}
             onChange={(e) => {
                 setWord(e.target.value)
-                handleSubmit(e)
             }}
           />
           <button>Search word</button>
@@ -42,17 +43,19 @@ const Home = () => {
             {data && <><span>
                 <h1>{word}</h1>
                 <p>Phonetic sound: {data?.phonetic}</p>
-                {data.meanings.map(item=>item).array.forEach(item => {
+                {data?.meanings.map(item=>item).forEach(item => {
                     const [...partOfSpeech] = item.partOfSpeech;
                     const [...definition] = item.definitions;
-                    definition.map((item)=>(<span>
-                        <h3>Definition:{partOfSpeech.join("")} - {item.definition}</h3>
-                    </span>))
+                    const list = definition.map((item)=> item.definition);
+                    def.push(list.join(","))
+                  
+                    // const 
+                    // setSpan(li)
+                    console.log(list.join(","))
                     // console.log(define)
                 })
                 }
-                
-            </span></> }
+              {def}            </span></> }
         </div>
       </div>
     </div>
