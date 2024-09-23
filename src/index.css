@@ -3,6 +3,13 @@
   font-family:sans-serif;
   color:#333;
 }
+b{
+  font-size:1.4rem;
+
+}
+span h1{
+  text-transform:capitalize;
+}
 .navbar{
   padding:20px;
   display:flex;

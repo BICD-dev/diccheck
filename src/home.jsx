@@ -1,10 +1,9 @@
 import { useState, useCallback } from "react";
+import HandleFetch from "./handleFetch";
 
 const Home = () => {
   const [data, setData] = useState("");
   const [word, setWord] = useState("");
-  const [span, setSpan] = useState(<span></span>);
-  const [ def, setDef] = useState([])
   
   const handleSubmit = useCallback(async (e)=>{
     e.preventDefault();
@@ -20,7 +19,7 @@ const Home = () => {
         console.log(error);
     }
 },[word]);
-
+  
   return (
     <div className="home">
       <div className="container">
@@ -40,22 +39,7 @@ const Home = () => {
         </form>
 
         <div className="info">
-            {data && <><span>
-                <h1>{word}</h1>
-                <p>Phonetic sound: {data?.phonetic}</p>
-                {data?.meanings.map(item=>item).forEach(item => {
-                    const [...partOfSpeech] = item.partOfSpeech;
-                    const [...definition] = item.definitions;
-                    const list = definition.map((item)=> item.definition);
-                    def.push(list.join(","))
-                  
-                    // const 
-                    // setSpan(li)
-                    console.log(list.join(","))
-                    // console.log(define)
-                })
-                }
-              {def}            </span></> }
+            {data && <HandleFetch data={data} word={word}/>}
         </div>
       </div>
     </div>
