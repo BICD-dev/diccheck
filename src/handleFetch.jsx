@@ -1,9 +1,7 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 
 const HandleFetch = ({data,word}) => {
-    const [count, setCount] = useState(0);
     
-    console.log(data)
     
     function meaning(){
         let some = []
@@ -12,6 +10,7 @@ const HandleFetch = ({data,word}) => {
             const [...partOfSpeech] = item.partOfSpeech;
             const [...definition] = item.definitions;
             const listOfDefinition = definition.map((item)=> {
+                
                 return(
                     <li>{item.definition}</li>
                 )
@@ -23,9 +22,6 @@ const HandleFetch = ({data,word}) => {
                 <p></p>
             </section>)
 
-            //chrecking the first part of speech
-
-            // console.log(some)
         })
         return(
             <span>
@@ -36,8 +32,10 @@ const HandleFetch = ({data,word}) => {
     return ( 
         <>
         <span>
-                <h1>{word}</h1>
-                <p>Phonetic sound: {data?.phonetic}</p>
+                <h1>{data?.word}</h1>
+                <p style={{
+                    color:"green"
+                }}>{data?.phonetic}</p>
                 {data && meaning()}
         
         </span>

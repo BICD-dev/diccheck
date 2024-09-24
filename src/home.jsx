@@ -1,10 +1,9 @@
 import { useState, useCallback } from "react";
 import HandleFetch from "./handleFetch";
-
 const Home = () => {
   const [data, setData] = useState("");
   const [word, setWord] = useState("");
-  
+  const [error, setError] = useState(null)
   const handleSubmit = useCallback(async (e)=>{
     e.preventDefault();
     //fetch data
@@ -15,31 +14,37 @@ const Home = () => {
 
         setData(dict[0])
         
-    } catch (error) {
-        console.log(error);
+    } catch (err) {
+        console.log(err);
+        setError(err.message)
     }
 },[word]);
-  
+
   return (
     <div className="home">
       <div className="container">
         <form
          onSubmit={handleSubmit}
          >
-          <label> SEARCH WORD</label>
+          <label>DICTIONARY</label>
           <input
             type="text"
-            placeholder="type in a word to search"
+            placeholder="Search Dictionary"
             value={word}
             onChange={(e) => {
                 setWord(e.target.value)
             }}
           />
-          <button>Search word</button>
+          <button> &#128269;search</button>
         </form>
 
         <div className="info">
             {data && <HandleFetch data={data} word={word}/>}
+            {error !== null &&
+          <p className="Error">
+            {error.message}
+          </p>
+        }
         </div>
       </div>
     </div>

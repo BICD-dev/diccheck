@@ -2,6 +2,7 @@
   margin:0;
   font-family:sans-serif;
   color:#333;
+  font-family: poppins;
 }
 b{
   font-size:1.4rem;
@@ -39,15 +40,45 @@ span h1{
   align-items: center;
   width:100%;
 }
+label{
+  color:#f1356d;
+  margin-right: 1rem;
+}
+button{
+  margin-left:1rem;
+  background-color: #f1356d;
+  color:white;
+  cursor:pointer;
+  transition:all ease 0.3s;
+}
+button:hover{
+  color: #f1356d;
+  background-color:white;
+}
+input{
+  border-radius:8px;
+}
 form{
   display: flex;
-  flex-direction:column;
+  flex-direction:row;
   justify-content:center;
   align-items: center;
   box-shadow: 0px 0px 5px black;
   border-radius: 1rem;
   width:fit-content;
-  padding:5rem;
+  padding:1rem;
   line-height:1.6rem;
   margin-top:2rem;
+}
+.info{
+  height:fit-content;
+  width:80vw;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width:560px){
+  .links{
+    display:none;
+  }
+  
 }
