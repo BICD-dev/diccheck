@@ -1,9 +1,12 @@
 import { useState, useCallback } from "react";
-import HandleFetch from "./handleFetch";
+import HandleFetch from "./fetchApi";
+import picture from "./imgs/slava-auchynnikau-se0aqc8f2bA-unsplash.jpg";
+
 const Home = () => {
   const [data, setData] = useState("");
   const [word, setWord] = useState("");
-  const [error, setError] = useState(null)
+  const [error, setError] = useState(null);
+
   const handleSubmit = useCallback(async (e)=>{
     e.preventDefault();
     //fetch data
@@ -11,8 +14,9 @@ const Home = () => {
         const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
         const dict = await res.json();
         console.log(dict);
-
-        setData(dict[0])
+      // test with divine
+        const fullData = dict.length === 1 ? dict[0] : dict
+        setData(fullData)
         
     } catch (err) {
         console.log(err);
@@ -39,12 +43,9 @@ const Home = () => {
         </form>
 
         <div className="info">
+          {word}
             {data && <HandleFetch data={data} word={word}/>}
-            {error !== null &&
-          <p className="Error">
-            {error.message}
-          </p>
-        }
+            
         </div>
       </div>
     </div>

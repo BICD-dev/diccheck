@@ -1,84 +1,116 @@
-*{
-  margin:0;
-  font-family:sans-serif;
-  color:#333;
+* {
+  margin: 0;
+  font-family: sans-serif;
+  color: #333;
   font-family: poppins;
 }
-b{
-  font-size:1.4rem;
-
+body{
+  background-image: url("./imgs/slava-auchynnikau-se0aqc8f2bA-unsplash.jpg");
+  background-size: cover;
 }
-span h1{
-  text-transform:capitalize;
+b {
+  font-size: 1.4rem;
 }
-.navbar{
-  padding:20px;
-  display:flex;
+span h1 {
+  text-transform: capitalize;
+}
+.navbar {
+  padding: 20px;
+  display: flex;
   align-items: center;
   max-width: 1000px;
-  margin:0 auto;
+  margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
 }
-.navbar h1{
-  color:#f1356d;
+.navbar h1 {
+  color: #f1356d;
 }
-.navbar .links{
+.navbar .links {
   margin-left: auto;
 }
-.navbar a{
-  margin-left: 16px;
+.navbar a {
+  margin-left: 25px;
   text-decoration: none;
-  padding:6px;
+  padding: 6px;
+  color:#f2f2f2
 }
-.navbar a:hover{
-  color:#f1356d;
+.navbar a:hover {
+  color: #f1356d;
 }
-.container{
+.container {
   display: flex;
-  flex-direction:column;
-  justify-content:center;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width:100%;
+  width: 100%;
 }
-label{
-  color:#f1356d;
+label {
+  color: #f1356d;
   margin-right: 1rem;
 }
-button{
-  margin-left:1rem;
+button {
+  margin-left: 1rem;
   background-color: #f1356d;
-  color:white;
-  cursor:pointer;
-  transition:all ease 0.3s;
+  color: white;
+  cursor: pointer;
+  transition: all ease 0.3s;
 }
-button:hover{
+button:hover {
   color: #f1356d;
-  background-color:white;
+  background-color: white;
 }
-input{
-  border-radius:8px;
+input {
+  border-radius: 8px;
 }
-form{
+form {
   display: flex;
-  flex-direction:row;
-  justify-content:center;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   box-shadow: 0px 0px 5px black;
   border-radius: 1rem;
-  width:fit-content;
-  padding:1rem;
-  line-height:1.6rem;
-  margin-top:2rem;
+  width: fit-content;
+  padding: 1rem;
+  line-height: 1.6rem;
+  margin-top: 2rem;
 }
-.info{
-  height:fit-content;
-  width:80vw;
+.info {
+  height: fit-content;
+  width: 80vw;
   display: flex;
   flex-direction: column;
+  margin: 2rem;
+  border-radius: 8px;
 }
-@media screen and (max-width:560px){
-  .links{
-    display:none;
+.footer {
+  background-color: #f1356d;
+  color: #f2f2f2;
+  position: fixed;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  font-weight: bold;
+}
+.footer p {
+  color: #fff;
+}
+@media screen and (max-width: 560px) {
+  .links {
+    display: none;
   }
-  
+  form {
+    flex-direction: column;
+  }
+  input {
+    margin: 1.2rem;
+    height: 29px;
+    width: 100px;
+  }
+  button {
+    font: size 1rem;
+    border: 1px groove gray;
+    border-radius:5px
+  }
 }
