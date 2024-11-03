@@ -15,8 +15,7 @@ const Home = () => {
         const dict = await res.json();
         console.log(dict);
       // test with divine
-        const fullData = dict.length === 1 ? dict[0] : dict
-        setData(fullData)
+        setData(dict)
         
     } catch (err) {
         console.log(err);
@@ -43,7 +42,6 @@ const Home = () => {
         </form>
 
         <div className="info">
-          {word}
             {data && <HandleFetch data={data} word={word}/>}
             
         </div>

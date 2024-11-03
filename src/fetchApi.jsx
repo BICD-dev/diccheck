@@ -1,19 +1,25 @@
+import { useState } from "react";
+
 const HandleFetch = ({ data, word }) => {
   function meaning() {
+    let count = 0;
     let some = [];
-    for (const [k] in data) {
-      const meaning = data[k].meanings.map((item) => item);
-      console.log(meaning)
-      meaning.forEach((item) => {
-        //destructuring the values of key stuff
+    // console.log(data[0].phonetics[0].text)
+    for (let i=0;i<data.length;i++) {
+      console.log(i);
+      const meaning = data[i].meanings.map((item) => item);
+      meaning.forEach((item, index) => {
+
+      //   //destructuring the values of key stuff
         const [...partOfSpeech] = item.partOfSpeech;
         const [...definition] = item.definitions;
         const listOfDefinition = definition.map((item) => {
           return <li>{item.definition}</li>;
         });
         // console.log(listOfDefinition)
+        
         some.push(
-          <section className="definitions" key={partOfSpeech}>
+          <section className="definitions" key={`${count}-${index}`}>
             <p>
               <b>{partOfSpeech}</b>
             </p>
@@ -26,16 +32,16 @@ const HandleFetch = ({ data, word }) => {
     return <span>{some}</span>;
   }
 
+
   return (
     <>
       <span>
-        <h1>{data?.word}</h1>
+        <h1>{data[0].word}</h1>
         <p
           style={{
             color: "green",
           }}
-        >
-          {data?.phonetic}
+        >{data[0].phonetics[0] ? data[0].phonetics[0].text : "No phonetics"}
         </p>
         {data && meaning()}
       </span>

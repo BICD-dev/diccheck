@@ -5,7 +5,7 @@
   font-family: poppins;
 }
 body{
-  background-image: url("./imgs/slava-auchynnikau-se0aqc8f2bA-unsplash.jpg");
+  /* background-image: url("./imgs/slava-auchynnikau-se0aqc8f2bA-unsplash.jpg"); */
   background-size: cover;
 }
 b {
@@ -32,7 +32,7 @@ span h1 {
   margin-left: 25px;
   text-decoration: none;
   padding: 6px;
-  color:#f2f2f2
+  /* color:#f2f2f2 */
 }
 .navbar a:hover {
   color: #f1356d;
