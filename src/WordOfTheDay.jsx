@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import HandleFetch from "./fetchApi";
-
+import "./WordOfTheDay.css";
 const WordOfTheDay = () => {
   const [word, setWord] = useState("");
   const [dat, setDat] = useState("");
@@ -30,7 +30,8 @@ const WordOfTheDay = () => {
     runDaily();
   }, []);
   // fetching the meaning of the word
-  const handleSubmit = useCallback(async ()=>{
+  useEffect(()=>{
+    const handleSubmit = async ()=>{
     //fetch data
     try {
         const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
@@ -40,14 +41,15 @@ const WordOfTheDay = () => {
         setDat(dict);
         
     } catch (err) {
-        console.log(err);
+        // console.log(err);
     }
-},[]);
-handleSubmit();
+  };
+  handleSubmit();
+}, [word]);
   return (
     <>
       <div className="dayWord">
-        <h2>{word} </h2>
+        <h2>Word of the Day</h2>
         {dat && <HandleFetch data={dat} word={word}/>}
       </div>
     </>
