@@ -1,12 +1,12 @@
 import "./index.css";
-import Navbar from "./navbar";
-import Home from "./home";
-import About from "./About";
-import Footer from "./footer";
-import Contact from "./Contact";
-import WordOfTheDay from "./WordOfTheDay"
+import Navbar from "./pages/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Footer from "./pages/Footer";
+import Contact from "./pages/Contact";
+import WordOfTheDay from "./pages/WordOfTheDay"
+import Error from "./pages/ErrorPage";
 import { Routes, Route } from 'react-router-dom';
-
 function App() {
   return (
     <div className="App">
@@ -17,6 +17,7 @@ function App() {
           <Route path="/about" element = {<About />} />
           <Route path="/word" element = {<WordOfTheDay />}/>
           <Route path="/contact" element = {<Contact />} />
+          <Route path="*" element = {<Error/>} />
           </Routes>
         <Footer />
       </div>

@@ -1,6 +1,7 @@
-import { useEffect, useState, useCallback } from "react";
-import HandleFetch from "./fetchApi";
+import { useEffect, useState } from "react";
+import HandleFetch from "../components/fetchApi";
 import "./WordOfTheDay.css";
+import axios from "axios";
 const WordOfTheDay = () => {
   const [word, setWord] = useState("");
   const [dat, setDat] = useState("");
@@ -15,8 +16,8 @@ const WordOfTheDay = () => {
         }
       if (!lastRunDate || (now - lastRunDate) === 24 * 60 * 60 * 1000) {
         try {
-          const res = await fetch("https://random-word-api.herokuapp.com/word");
-          const data = await res.json();
+          const res = await axios.get("https://random-word-api.herokuapp.com/word");
+          const data = await res.data;
           const out = data[0];
           // console.log(data[0]);
           setWord(out);
@@ -34,8 +35,8 @@ const WordOfTheDay = () => {
     const handleSubmit = async ()=>{
     //fetch data
     try {
-        const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-        const dict = await res.json();
+        const res = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+        const dict = await res.data;
         console.log(dict);
       // test with divine
         setDat(dict);

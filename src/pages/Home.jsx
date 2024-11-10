@@ -1,25 +1,27 @@
 import { useState, useCallback } from "react";
-import HandleFetch from "./fetchApi";
-import picture from "./imgs/slava-auchynnikau-se0aqc8f2bA-unsplash.jpg";
+import HandleFetch from "../components/fetchApi";
+import axios from "axios";
 
 const Home = () => {
   const [data, setData] = useState("");
   const [word, setWord] = useState("");
   const [error, setError] = useState(null);
+  const [wordExist, setWordExist] = useState(true);
 
   const handleSubmit = useCallback(async (e)=>{
     e.preventDefault();
     //fetch data
     try {
-        const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-        const dict = await res.json();
+        const res = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+        const dict = await res.data;
         console.log(dict);
       // test with divine
         setData(dict)
         
     } catch (err) {
-        console.log(err);
-        setError(err.message)
+        console.log(err.message);
+        setError(err.message);
+        setWordExist(false)
     }
 },[word]);
 
@@ -42,8 +44,7 @@ const Home = () => {
         </form>
 
         <div className="info">
-            {data && <HandleFetch data={data} word={word}/>}
-            
+            {data && wordExist ? <HandleFetch data={data} word={word}/>: error }
         </div>
       </div>
     </div>

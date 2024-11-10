@@ -1,7 +1,7 @@
 import "./contact.css";
-import phone from "./assets/phone.svg";
-import location from "./assets/location.svg";
-import mail from "./assets/mail.svg";
+import phone from "../assets/phone.svg";
+import location from "../assets/location.svg";
+import mail from "../assets/mail.svg";
 const Login = () => {
   return (
     <>
@@ -10,7 +10,7 @@ const Login = () => {
         <p>
           we are here to meet any bussiness need to promote your company online
         </p>
-        <section>
+        <section className="detail">
           <img src={phone} alt="phone-icon" /><label>Phone: </label> <span>1234567890</span>
           <br />
           <img src={location} alt="phone-icon" /><label>Location: </label> <span>75 street sample, WI 63025</span> <br />
