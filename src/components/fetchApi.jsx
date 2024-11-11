@@ -6,7 +6,6 @@ const HandleFetch = ({ data, word }) => {
     let some = [];
     // console.log(data[0].phonetics[0].text)
     for (let i=0;i<data.length;i++) {
-      console.log(i);
       const meaning = data[i].meanings.map((item) => item);
       meaning.forEach((item, index) => {
 

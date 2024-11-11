@@ -3,6 +3,7 @@
   font-family: sans-serif;
   color: #333;
   font-family: "Poppins","sans-serif";
+  padding:0;
 }
 body{
   background-size: cover;
@@ -14,15 +15,18 @@ span h1 {
   text-transform: capitalize;
 }
 .navbar {
-  padding: 20px;
+  padding:0;
   display: flex;
   align-items: center;
   max-width: 1000px;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
+  flex-direction:row;
+  /* border:10px solid orange; */
 }
 .navbar h1 {
   color: #f1356d;
+  padding:16px
 }
 .navbar .links {
   margin-left: auto;
@@ -31,6 +35,7 @@ span h1 {
   margin-left: 25px;
   text-decoration: none;
   padding: 6px;
+
   /* color:#f2f2f2 */
 }
 .navbar a:hover {
@@ -53,6 +58,7 @@ button {
   color: white;
   cursor: pointer;
   transition: all ease 0.3s;
+  padding:0.5rem
 }
 button:hover {
   color: #f1356d;
@@ -95,21 +101,44 @@ form {
 .footer p {
   color: #fff;
 }
+
 @media screen and (max-width: 560px) {
+  .container{
+    overflow:hidden;
+
+  }
   .links {
-    display: none;
+    display: flex;
+    font-size: 0.8rem;
+    position:absolute;
+    bottom:0%; 
+    width: 100%;
+    height: fit-content;
+    justify-content: space-around;
+    background-color: #f1356d;
+    padding:10px 0;
+
+  }
+  .links a{
+    color:white;
+    font-weight:500;
   }
   form {
     flex-direction: column;
+    padding:2rem;
+    align-items: center;
   }
   input {
     margin: 1.2rem;
     height: 29px;
-    width: 100px;
+    width: 130px;
   }
   button {
     font: size 1rem;
     border: 1px groove gray;
     border-radius:5px
+  }
+  .footer{
+    display:none;
   }
 }

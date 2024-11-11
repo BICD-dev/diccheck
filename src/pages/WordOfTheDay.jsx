@@ -14,7 +14,7 @@ const WordOfTheDay = () => {
         if(storedWord){
             setWord(storedWord);
         }
-      if (!lastRunDate || (now - lastRunDate) === 24 * 60 * 60 * 1000) {
+      if (!lastRunDate || (now - lastRunDate) >= 24 * 60 * 60 * 1000) {
         try {
           const res = await axios.get("https://random-word-api.herokuapp.com/word");
           const data = await res.data;
@@ -37,7 +37,7 @@ const WordOfTheDay = () => {
     try {
         const res = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
         const dict = await res.data;
-        console.log(dict);
+        // console.log(dict);
       // test with divine
         setDat(dict);
         
