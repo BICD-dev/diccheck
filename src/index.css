@@ -79,6 +79,16 @@ form {
   line-height: 1.6rem;
   margin-top: 2rem;
 }
+.sound-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.sound-button img {
+  width: 25px; 
+  height: 25px;
+  padding:0
+}
 .info {
   height: fit-content;
   width: 80vw;
@@ -110,7 +120,7 @@ form {
   .links {
     display: flex;
     font-size: 0.8rem;
-    position:absolute;
+    position:fixed;
     bottom:0%; 
     width: 100%;
     height: fit-content;

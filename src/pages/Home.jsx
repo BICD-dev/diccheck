@@ -14,7 +14,7 @@ const Home = () => {
     try {
         const res = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
         const dict = await res.data;
-        // console.log(dict);
+        console.log(dict);
       // test with divine
         setData(dict)
         
