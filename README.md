@@ -6,21 +6,21 @@ This web app is a fast, reliable, and user-friendly tool for looking up words, c
 
 ## Features
 
-    - **Instant Search**: Quickly search for any word and get detailed information such as its meaning, pronunciation, part of speech, and usage examples.
-    - **Word of the Day**: Discover a new word each day to expand your vocabulary.
-    - **Offline Mode**: Access word definitions and meanings without an internet connection.
-    - **Favorites**: Save words you want to revisit later for easy access.
-    - **Voice Search**: Use voice input to find words hands-free.
-    - **Thesaurus Integration**: Find synonyms and antonyms for any word you look up.
-    - **Clear Definitions**: Concise and easy-to-understand definitions with examples to help you use the word correctly.
+    - Instant Search: Quickly search for any word and get detailed information such as its meaning, pronunciation, part of speech, and usage examples.
+    - Word of the Day: Discover a new word each day to expand your vocabulary.
+    - Offline Mode: Access word definitions and meanings without an internet connection.
+    - Favorites: Save words you want to revisit later for easy access.
+    - Voice Search: Use voice input to find words hands-free.
+    - Thesaurus Integration: Find synonyms and antonyms for any word you look up.
+    - Clear Definitions: Concise and easy-to-understand definitions with examples to help you use the word correctly.
 
 
 ## How to Use
 
-    - **Search a Word**: Tap the search bar and type any word you want to look up. You'll instantly see its definition and related details.
-    - **Word of the Day**: Access the "Word of the Day" feature from the main screen to learn something new each day.
-    - **Favorites**: Tap the star icon next to any word to add it to your favorites list for easy reference later.
-    - **Voice Search**: Tap the microphone icon and say the word you want to search for.
+    - Search a Word: Tap the search bar and type any word you want to look up. You'll instantly see its definition and related details.
+    - Word of the Day: Access the "Word of the Day" feature from the main screen to learn something new each day.
+    - Favorites: Tap the star icon next to any word to add it to your favorites list for easy reference later.
+    - Voice Search: Tap the microphone icon and say the word you want to search for.
 
 ## Privacy Policy
 
@@ -37,7 +37,6 @@ If you encounter any issues:
 
 If you have any questions, feedback, or suggestions, feel free to contact us:
 
-    Email: support@dictionaryapp.com
     Website: www.diccheck.vercel.app
 
 We hope the Dictionary App helps you with your learning journey! Thanks for downloading and happy exploring.
