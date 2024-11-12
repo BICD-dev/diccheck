@@ -12,4 +12,10 @@
 }
 .about p{
     font-weight:500;
+    padding-bottom:3rem;
+}
+@media screen and (max-width:560px){
+    .about{
+        padding:1rem 1rem;
+    }
 }

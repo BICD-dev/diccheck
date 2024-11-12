@@ -59,7 +59,7 @@ const HandleFetch = ({ data, word }) => {
   };
   return (
     <>
-      <span>
+      <span style={{"paddingBottom":"3rem"}}>
         <h1>{data[0].word}</h1>
         {/* sound button */}
         <button className="sound-button" onClick={playSound}>
