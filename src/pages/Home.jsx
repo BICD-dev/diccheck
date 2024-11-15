@@ -10,12 +10,13 @@ const Home = () => {
 
   const handleSubmit = useCallback(async (e)=>{
     e.preventDefault();
+    setWordExist(true);
+    
     //fetch data
     try {
         const res = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
         const dict = await res.data;
-        console.log(dict);
-      // test with divine
+        setWordExist(true);
         setData(dict)
         
     } catch (err) {
@@ -24,7 +25,6 @@ const Home = () => {
         setWordExist(false)
     }
 },[word]);
-
   return (
     <div className="home">
       <div className="container">
@@ -45,6 +45,7 @@ const Home = () => {
 
         <div className="info">
             {data && wordExist ? <HandleFetch data={data} word={word}/>: error }
+            
         </div>
       </div>
     </div>
