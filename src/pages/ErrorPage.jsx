@@ -6,7 +6,7 @@ const Error = () => {
   return (
     <>
       <a href="/">
-        <div className="container">
+        <div className="error-container">
           <div className="row">
             <div className="col-sm-12 col-md-12 mt-5 mb-5">
               <svg
