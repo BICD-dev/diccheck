@@ -16,7 +16,6 @@ const HandleFetch = ({ data, word }) => {
         }
       } 
     }
-    console.log(sound);
     setAudio(sound);
   }, [data]);
   //function to get the meaning of the word
