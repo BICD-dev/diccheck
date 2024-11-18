@@ -7,31 +7,40 @@ const Home = () => {
   const [word, setWord] = useState("");
   const [error, setError] = useState(null);
   const [wordExist, setWordExist] = useState(true);
-
-  const handleSubmit = useCallback(async (e)=>{
+  const [mode, setMode] = useState("dictionary");
+  //submit for dictionary
+  const handleSubmitForDictionary = useCallback(async (e)=>{
     e.preventDefault();
     setWordExist(true);
-    
-    //fetch data
-    try {
-        const res = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-        const dict = await res.data;
-        setWordExist(true);
-        setData(dict)
-        
-    } catch (err) {
-        console.log(err.message);
-        setError(err.message);
-        setWordExist(false)
+    //fetching for dictionary or thesaurus depending on the mode 
+    if(mode === "dictionary") {
+      //fetch data
+      try {
+          const res = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+          const dict = await res.data;
+          setWordExist(true);
+          setData(dict)
+          
+      } catch (err) {
+          console.log(err.message);
+          setError(err.message);
+          setWordExist(false);
+      }
+    } else if(mode === "thesaurus") {
+      console.log(mode);
     }
 },[word]);
+
   return (
     <div className="home">
       <div className="container">
         <form
-         onSubmit={handleSubmit}
+         onSubmit={handleSubmitForDictionary}
          >
-          <label>DICTIONARY</label>
+          <select>
+            <option value="dictionary" onClick={()=>setMode("dictionary")}>Dictionary</option>
+            <option value="thesaurus" onClick={()=>setMode("thesaurus")}>Thesaurus</option>
+          </select>
           <input
             type="text"
             placeholder="Search Dictionary"
@@ -40,7 +49,8 @@ const Home = () => {
                 setWord(e.target.value)
             }}
           />
-          <button> &#128269;search</button>
+          <button> &#128269;</button>
+          {/* <button></button> */}
         </form>
 
         <div className="info">
